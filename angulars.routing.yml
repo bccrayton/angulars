@@ -1,0 +1,7 @@
+angulars:
+  path: '/angulars'
+  defaults:
+    _content: '\Drupal\angulars\Controller\AngularsController::content'
+    _title: 'AngularJS Samples'
+  requirements:
+    _permission: 'access content'
