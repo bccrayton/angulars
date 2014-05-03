@@ -32,7 +32,6 @@ class AngularsController {
       '#title' => t('Sample 1: Basic Binding'),
       '#open' => TRUE,
       '#attributes' => array(
-        'ng-app' => '',
         'ng-controller' => 'firstCtrl',
       ),
       '#attached' => array(

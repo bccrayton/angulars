@@ -17,3 +17,10 @@ function angulars_menu() {
     ),
   );
 }
+
+/**
+ * Implements hooK_preprocess_html().
+ */
+function angulars_preprocess_html(&$variables) {
+  $variables['attributes']['ng-app'] = "myApp";
+}
