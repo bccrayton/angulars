@@ -17,6 +17,7 @@ class AngularsController {
 
     $output[] = $this->sample_1();
     $output[] = $this->sample_2();
+    $output[] = $this->sample_3();
 
     return $output;
   }
@@ -76,9 +77,37 @@ class AngularsController {
       '#attributes' => array('ng-model' => 's2.message'),
     );
     $data['sample2']['content'] = array(
-      '#markup' => '<p>Reversed: {{s2.message | s2_reverse}}</p>',
+      '#markup' => '<p><b>Reversed:</b> {{s2.message | s2_reverse}}</p>',
     );
     return $data;
   }
+
+  /**
+   * Sample 3: Basic Directive.
+   */
+  function sample_3() {
+    $data = array();
+    // Wrapper.
+    $data['sample3'] = array(
+      '#type' => 'details',
+      '#title' => t('Sample 3: Basic Directive'),
+      '#open' => TRUE,
+      '#description' => 'In this example, a custom html tag <b>&lt;s3directive&gt;
+        &lt;/s3directive&gt;</b> gets replaced by the output content, specified in
+        a directive declaration in JavaScript.',
+      '#attributes' => array(
+        'id' => 's3_container',
+      ),
+      '#attached' => array(
+        'js' => array(drupal_get_path('module', 'angulars') . '/js/sample3.js'),
+      ),
+    );
+    // Content.
+    $data['sample3']['content'] = array(
+      '#markup' => '<p><br/><b>Result:</b> <s3directive></s3directive></p>',
+    );
+    return $data;
+  }
+
 
 }  
