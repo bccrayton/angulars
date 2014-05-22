@@ -18,6 +18,7 @@ class AngularsController {
     $output[] = $this->sample_1();
     $output[] = $this->sample_2();
     $output[] = $this->sample_3();
+    $output[] = $this->sample_4();
 
     return $output;
   }
@@ -27,7 +28,6 @@ class AngularsController {
    */
   function sample_1() {
     $data = array();
-    // Wrapper.
     $data['sample1'] = array(
       '#type' => 'details',
       '#title' => t('Sample 1: Basic Binding'),
@@ -57,7 +57,6 @@ class AngularsController {
    */
   function sample_2() {
     $data = array();
-    // Wrapper.
     $data['sample2'] = array(
       '#type' => 'details',
       '#title' => t('Sample 2: Basic Filter'),
@@ -87,7 +86,6 @@ class AngularsController {
    */
   function sample_3() {
     $data = array();
-    // Wrapper.
     $data['sample3'] = array(
       '#type' => 'details',
       '#title' => t('Sample 3: Basic Directive'),
@@ -105,6 +103,38 @@ class AngularsController {
     );
     return $data;
   }
+
+  /**
+   * Sample 4: Basic Behaviors.
+   */
+  function sample_4() {
+    $data = array();
+    $data['sample4'] = array(
+      '#type' => 'details',
+      '#title' => t('Sample 4: Basic Behaviors'),
+      '#open' => TRUE,
+      '#description' => 'Alert with message is tied to button click behavior.',
+      '#attributes' => array(
+        'id' => 's4_container',
+      ),
+      '#attached' => array(
+        'js' => array(drupal_get_path('module', 'angulars') . '/js/sample4.js'),
+      ),
+    );
+    // Content.
+    $data['sample4']['button'] = array(
+      '#type' => 'button',
+      '#value' => t('Click me'),
+      '#attributes' => array(
+        'click' => '',
+      ),
+    );
+    $data['sample4']['content'] = array(
+      '#markup' => '',
+    );
+    return $data;
+  }
+
 
 
 }  
