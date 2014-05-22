@@ -92,9 +92,6 @@ class AngularsController {
       '#type' => 'details',
       '#title' => t('Sample 3: Basic Directive'),
       '#open' => TRUE,
-      '#description' => 'In this example, a custom html tag <b>&lt;s3directive&gt;
-        &lt;/s3directive&gt;</b> gets replaced by the output content, specified in
-        a directive declaration in JavaScript.',
       '#attributes' => array(
         'id' => 's3_container',
       ),
@@ -104,7 +101,7 @@ class AngularsController {
     );
     // Content.
     $data['sample3']['content'] = array(
-      '#markup' => '<p><br/><b>Result:</b> <s3directive></s3directive></p>',
+      '#markup' => '<p><s3directive></s3directive></p><p><span s3directivea></span></p><p><span class="s3directiveb"></span></p>',
     );
     return $data;
   }
