@@ -8,6 +8,9 @@
  */
 var s3_app = angular.module('s3_app', []);
 
+/**
+ * Directive with restriction "E" works on custom elements.
+ */
 s3_app.directive('s3directive', function() {
   return {
     restrict: 'E',
@@ -15,6 +18,9 @@ s3_app.directive('s3directive', function() {
   };
 });
 
+/**
+ * Directive with restriction "A" works on custom attributes.
+ */
 s3_app.directive('s3directivea', function() {
   return {
     restrict: 'A',
@@ -22,6 +28,9 @@ s3_app.directive('s3directivea', function() {
   };
 });
 
+/**
+ * Directive with restriction "C" works on classes.
+ */
 s3_app.directive('s3directiveb', function() {
   return {
     restrict: 'C',
