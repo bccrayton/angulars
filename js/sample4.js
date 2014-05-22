@@ -8,6 +8,9 @@
  */
 var s4_app = angular.module('s4_app', []);
 
+/**
+ * A directive to bind event to element, creating a behavior.
+ */
 s4_app.directive('click', function() {
   return function(scope, element) {
     element.bind('click', function() {
