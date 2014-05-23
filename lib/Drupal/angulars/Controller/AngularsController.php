@@ -156,10 +156,18 @@ class AngularsController {
     );
     // Content.
     $data['sample5']['content1'] = array(
-      '#markup' => '<p><span class="s5"></span></p>',
+      '#markup' => '<p><span class="s5" initext="Initial value 1"></span></p>',
     );
     $data['sample5']['content2'] = array(
-      '#markup' => '<p><span class="s5"></span></p>',
+      '#markup' => '<p><span class="s5" initext="Initial value 2"></span></p>',
+    );
+    $data['sample5']['button'] = array(
+      '#type' => 'button',
+      '#value' => t('Set common value'),
+      '#attributes' => array(
+        'class' => array('s5button'),
+        'ng-click' => 's5setCommon();',
+      ),
     );
     return $data;
   }
