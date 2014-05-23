@@ -19,6 +19,7 @@ class AngularsController {
     $output[] = $this->sample_2();
     $output[] = $this->sample_3();
     $output[] = $this->sample_4();
+    $output[] = $this->sample_5();
 
     return $output;
   }
@@ -131,6 +132,34 @@ class AngularsController {
     );
     $data['sample4']['content'] = array(
       '#markup' => '',
+    );
+    return $data;
+  }
+
+  /**
+   * Sample 5: Isolate Scope.
+   */
+  function sample_5() {
+    $data = array();
+    $data['sample5'] = array(
+      '#type' => 'details',
+      '#title' => t('Sample 5: Isolate Scope'),
+      '#open' => TRUE,
+      '#description' => 'Fields with same class and directive but with different (isolate) scopes.',
+      '#attributes' => array(
+        'id' => 's5_container',
+        'ng-controller' => 's5_ctrl',
+      ),
+      '#attached' => array(
+        'js' => array(drupal_get_path('module', 'angulars') . '/js/sample5.js'),
+      ),
+    );
+    // Content.
+    $data['sample5']['content1'] = array(
+      '#markup' => '<p><span class="s5"></span></p>',
+    );
+    $data['sample5']['content2'] = array(
+      '#markup' => '<p><span class="s5"></span></p>',
     );
     return $data;
   }
