@@ -143,7 +143,7 @@ class AngularsController {
     $data = array();
     $data['sample5'] = array(
       '#type' => 'details',
-      '#title' => t('Sample 5: Isolate Scope'),
+      '#title' => t('Sample 5: Basic Isolate Scope'),
       '#open' => TRUE,
       '#description' => 'Fields with same class and directive but with different (isolate) scopes.',
       '#attributes' => array(
@@ -160,14 +160,6 @@ class AngularsController {
     );
     $data['sample5']['content2'] = array(
       '#markup' => '<p><span class="s5" initext="Initial value 2"></span></p>',
-    );
-    $data['sample5']['button'] = array(
-      '#type' => 'button',
-      '#value' => t('Set common value'),
-      '#attributes' => array(
-        'class' => array('s5button'),
-        'ng-click' => 's5setCommon();',
-      ),
     );
     return $data;
   }
