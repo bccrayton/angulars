@@ -22,9 +22,11 @@ s5_app.directive('s5', function() {
   return {
     restrict: 'C',
     scope: {
+      // Initext attribute mapped to initext scope variable.
       initext: '@',
     },
     link: function($scope, $elem, $attrs) {
+      // s5model draws from initext variable for each scope.
       $scope.s5model = $scope.initext;
 
     },
