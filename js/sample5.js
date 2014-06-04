@@ -23,12 +23,16 @@ s5_app.directive('s5', function() {
     restrict: 'C',
     scope: {
       // Initext attribute mapped to initext scope variable.
-      initext: '@',
+      iniText: '=',
     },
     link: function($scope, $elem, $attrs) {
-      // s5model draws from initext variable for each scope.
-      $scope.s5model = $scope.initext;
-
+      // Set default value.
+      if (typeof($scope.iniText) != 'undefined' || !$scope.iniText) {
+        $scope.s5model = 'Initial text';
+      }
+      else {
+        $scope.s5model = $scope.iniText;
+      }
     },
     template: '<input type="text" ng-model="s5model" /> {{s5model}}',
   }

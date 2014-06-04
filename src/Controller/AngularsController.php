@@ -156,10 +156,10 @@ class AngularsController {
     );
     // Content.
     $data['sample5']['content1'] = array(
-      '#markup' => '<p><span class="s5" initext="Initial value 1"></span></p>',
+      '#markup' => '<p><span class="s5" initext="iniText"></span></p>',
     );
     $data['sample5']['content2'] = array(
-      '#markup' => '<p><span class="s5" initext="Initial value 2"></span></p>',
+      '#markup' => '<p><span class="s5" initext="iniText"></span></p>',
     );
     return $data;
   }
