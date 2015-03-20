@@ -4,3 +4,5 @@ core: 8.x
 package: 'Examples'
 version: '8.x-0.1'
 type: module
+libraries:
+   - angulars/angulars
