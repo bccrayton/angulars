@@ -2,19 +2,12 @@
 
 namespace Drupal\angulars\Controller;
 
-class AngularsController {
+use Drupal\Core\Controller\ControllerBase;
+
+class AngularsController extends ControllerBase {
+
   public function content() {
-
-    $output = array(
-      '#attached' => array(
-        'js' => array(
-          'https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.7/angular.min.js',
-          'core/misc/form.js',
-          'core/misc/collapse.js',
-        ),
-      ),
-    );
-
+    $output['#attached']['library'][] = 'angulars/angulars';
     $output[] = $this->sample_1();
     $output[] = $this->sample_2();
     $output[] = $this->sample_3();
@@ -36,9 +29,6 @@ class AngularsController {
       '#attributes' => array(
         'id' => 's1_container',
         'ng-controller' => 's1_ctrl',
-      ),
-      '#attached' => array(
-        'js' => array(drupal_get_path('module', 'angulars') . '/js/sample1.js'),
       ),
     );
     // Content.
@@ -66,9 +56,6 @@ class AngularsController {
         'id' => 's2_container',
         'ng-controller' => 's2_ctrl',
       ),
-      '#attached' => array(
-        'js' => array(drupal_get_path('module', 'angulars') . '/js/sample2.js'),
-      ),
     );
     // Content.
     $data['sample2']['input'] = array(
@@ -94,9 +81,6 @@ class AngularsController {
       '#attributes' => array(
         'id' => 's3_container',
       ),
-      '#attached' => array(
-        'js' => array(drupal_get_path('module', 'angulars') . '/js/sample3.js'),
-      ),
     );
     // Content.
     $data['sample3']['content'] = array(
@@ -117,9 +101,6 @@ class AngularsController {
       '#description' => 'Alert with message is tied to button click behavior.',
       '#attributes' => array(
         'id' => 's4_container',
-      ),
-      '#attached' => array(
-        'js' => array(drupal_get_path('module', 'angulars') . '/js/sample4.js'),
       ),
     );
     // Content.
@@ -149,9 +130,6 @@ class AngularsController {
       '#attributes' => array(
         'id' => 's5_container',
         'ng-controller' => 's5_ctrl',
-      ),
-      '#attached' => array(
-        'js' => array(drupal_get_path('module', 'angulars') . '/js/sample5.js'),
       ),
     );
     // Content.
